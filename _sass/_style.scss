@@ -2730,3 +2730,21 @@ p {
 [data-theme="dark"] .article-content mark:hover {
   background: rgba(196, 74, 60, 0.32);
 }
+
+/* 暗色模式：blockquote 背景去掉月白叠加层，避免暗底发白 */
+[data-theme="dark"] .article-content blockquote {
+  background:
+    linear-gradient(135deg, rgba(40, 44, 48, 0.55), rgba(40, 44, 48, 0.25)),
+    var(--glass-bg);
+  box-shadow: var(--glass-highlight), 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .article-content blockquote::before {
+  box-shadow: 0 0 0 3px var(--bg);
+}
+
+/* source-note 出处条：暗底去掉米色叠加 */
+[data-theme="dark"] .source-note {
+  background: var(--glass-bg);
+  border-left-color: var(--accent);
+}
