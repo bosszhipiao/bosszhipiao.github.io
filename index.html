@@ -1,5 +1,7 @@
 ---
 layout: default
+description: 此间文字——私人文学博客。职场札记、读书漫笔、文存摘录、原创随笔与碎语集，记录所见、所思、所读。
+image: /assets/images/og-default.png
 ---
 
 <!-- 模块一：首页扉页 -->
@@ -81,7 +83,7 @@ layout: default
             <div class="post-item-meta">
               <div class="post-item-tags">
                 {% for tag in post.tags limit: 4 %}
-                  <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">#{{ tag }}</a>
+                  <a href="{{ '/tags/' | relative_url }}#{{ tag | uri_escape }}">#{{ tag }}</a>
                 {% endfor %}
               </div>
               {% assign words = post.content | strip_html | size %}
@@ -152,7 +154,7 @@ layout: default
             {% else %}
               {% assign size_class = 'tag-size-1' %}
             {% endif %}
-            <a href="{{ '/tags/' | relative_url }}#{{ tag[0] | slugify }}"
+            <a href="{{ '/tags/' | relative_url }}#{{ tag[0] | uri_escape }}"
                class="{{ size_class }}"
                title="{{ count }} 篇">#{{ tag[0] }}</a>
           {% endfor %}

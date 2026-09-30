@@ -4,7 +4,7 @@ title: "《直子的草野》"
 date: 2026-02-11 00:40:00 +0800
 categories: [读书漫笔]
 tags: [村上春树, 挪威的森林, 失落, "2026"]
-image: /assets/images/posts/eileen-chang.jpg
+image: /assets/images/posts/murakami-norwegian.jpg
 featured: true
 ---
 

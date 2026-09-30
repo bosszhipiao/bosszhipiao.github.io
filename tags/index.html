@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 标签
+description: 此间文字标签索引：职场人际、识人命理、读书笔记、雨夜、失眠……按关键词检索所有文章。
 permalink: /tags/
 ---
 
@@ -8,13 +9,13 @@ permalink: /tags/
   <h1>标签</h1>
   <div class="tag-cloud" style="margin-bottom:36px;">
     {% for tag in site.tags %}
-      <a id="{{ tag[0] | slugify }}" href="#{{ tag[0] | slugify }}">#{{ tag[0] }}</a>
+      <a href="#{{ tag[0] | uri_escape }}">#{{ tag[0] }}</a>
     {% endfor %}
   </div>
 
   <div class="tag-list">
     {% for tag in site.tags %}
-      <div id="{{ tag[0] | slugify }}" class="tag-group">
+      <div id="{{ tag[0] }}" class="tag-group">
         <h2>#{{ tag[0] }}</h2>
         <ul>
           {% for post in tag[1] %}

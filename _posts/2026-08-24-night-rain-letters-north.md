@@ -4,7 +4,7 @@ title: "夜雨寄北——读《追忆似水年华》第一卷札记"
 date: 2026-08-24 22:48:00 +0800
 categories: [读书漫笔]
 tags: [普鲁斯特, 追忆似水年华, 夜雨寄北, 时间, "2026"]
-image: /assets/images/categories/reading.jpg
+image: /assets/images/posts/night-rain-letters-north.jpg
 ---
 
 普鲁斯特在书的开头写："在很长一段时期里，我都是早早就躺下了。"

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 分类
+description: 此间文字五大文集：职场札记、读书漫笔、文存摘录、自撰集、碎语集，按主题翻阅全部文章。
 permalink: /categories/
 ---
 
@@ -15,7 +16,7 @@ permalink: /categories/
       {% elsif cname == '自撰集' %}{% assign ccat = 'cat-writing' %}
       {% elsif cname == '碎语集' %}{% assign ccat = 'cat-fragments' %}
       {% else %}{% assign ccat = '' %}{% endif %}
-      <div id="{{ category[0] | slugify }}" class="category-group {{ ccat }}">
+      <div id="{{ category[0] }}" class="category-group {{ ccat }}">
         <h2>{{ category[0] }}</h2>
         <ul>
           {% for post in category[1] %}

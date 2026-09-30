@@ -3,6 +3,7 @@ layout: post
 title: "抽屉里的旧照片"
 date: 2024-08-25 23:20:00 +0800
 categories: [自撰集]
+image: /assets/images/posts/old-photos.jpg
 tags: [旧照片, 怀旧, 自省, "2024"]
 ---
 

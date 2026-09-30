@@ -3,6 +3,7 @@ layout: post
 title: "辞职信写了三遍"
 date: 2025-11-18 23:10:00 +0800
 categories: [职场札记]
+image: /assets/images/posts/resignation-letter.jpg
 tags: [辞职, 犹豫, 生存感悟, "2025"]
 ---
 

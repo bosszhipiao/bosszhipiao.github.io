@@ -4,7 +4,7 @@ title: "剪烛"
 date: 2026-08-02 22:18:00 +0800
 categories: [职场札记]
 tags: [加班, 职场人际, 剪烛, "2026"]
-image: /assets/images/categories/workplace.jpg
+image: /assets/images/posts/cutting-candles.jpg
 ---
 
 会议室的灯亮到第三个小时，谁都没再说话。

@@ -3,6 +3,7 @@ layout: post
 title: "周末的蓝"
 date: 2026-07-14 18:10:00 +0800
 categories: [碎语集]
+image: /assets/images/posts/weekend-blues.jpg
 tags: [周末, 无所事事, 怅然, "2026"]
 ---
 

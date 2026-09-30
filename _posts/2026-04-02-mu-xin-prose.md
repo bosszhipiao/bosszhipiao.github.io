@@ -3,6 +3,7 @@ layout: post
 title: "木心的孤山"
 date: 2026-04-02 23:15:00 +0800
 categories: [文存摘录]
+image: /assets/images/posts/mu-xin-prose.jpg
 tags: [木心, 琼美卡随想录, 文人, 自省, "2026"]
 featured: true
 ---

@@ -4,7 +4,7 @@ title: "周日下午的沙发"
 date: 2025-12-22 16:50:00 +0800
 categories: [自撰集]
 tags: [周日, 无所事事, 怅然, "2025"]
-image: /assets/images/posts/balcony-night.jpg
+image: /assets/images/posts/sunday-afternoon.jpg
 ---
 
 周日。下午四点。我躺在沙发上，没开灯。

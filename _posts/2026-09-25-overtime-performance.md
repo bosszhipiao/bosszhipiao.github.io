@@ -4,7 +4,7 @@ title: "加班是一种表演"
 date: 2026-09-25 22:00:00 +0800
 categories: [职场札记]
 tags: [职场人际, 生存感悟, 时代观察, "2026"]
-image: /assets/images/posts/meeting-room.jpg
+image: /assets/images/posts/overtime-performance.jpg
 ---
 
 晚上九点，办公室还亮着灯。

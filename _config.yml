@@ -1,9 +1,12 @@
 title: 此间文字
 email: private@localhost
+tagline: 所见、所思、所读
 description: >-
-  私人归档，自我梳理。记录所见、所思、所读。
+  此间文字是一个私人文学博客，记录职场札记、读书笔记、网文摘录、原创随笔与碎片感悟——所见、所思、所读。
 baseurl: ""
 url: "https://bosszhipiao.github.io"
+locale: "zh_CN"
+logo: /assets/images/logo.png
 
 permalink: /:categories/:title/
 markdown: kramdown
@@ -28,6 +31,7 @@ defaults:
     values:
       layout: "post"
       author: bosszhipiao
+      image: /assets/images/og-default.png
   - scope:
       path: ""
       type: "pages"
@@ -42,6 +46,3 @@ exclude:
   - .sass-cache
   - .jekyll-cache
   - .gitignore
-
-paginate: 10
-paginate_path: "/page:num/"

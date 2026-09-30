@@ -3,6 +3,7 @@ layout: post
 title: "《码头那盏绿灯》"
 date: 2025-08-14 21:50:00 +0800
 categories: [读书漫笔]
+image: /assets/images/posts/gatsby-green-light.jpg
 tags: [菲茨杰拉德, 盖茨比, 美国, 怅然, "2025"]
 ---
 

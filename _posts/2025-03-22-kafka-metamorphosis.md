@@ -4,7 +4,7 @@ title: "《变成甲虫的那一夜》"
 date: 2025-03-22 01:08:00 +0800
 categories: [读书漫笔]
 tags: [卡夫卡, 变形记, 异化, 怅然, "2025"]
-image: /assets/images/posts/balcony-night.jpg
+image: /assets/images/posts/kafka-metamorphosis.jpg
 ---
 
 他醒过来的时候,天还没亮。

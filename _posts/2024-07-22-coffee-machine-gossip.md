@@ -3,6 +3,7 @@ layout: post
 title: "咖啡机前的闲话"
 date: 2024-07-22 15:20:00 +0800
 categories: [职场札记]
+image: /assets/images/posts/coffee-machine-gossip.jpg
 tags: [职场人际, 八卦, 时代观察, "2024"]
 ---
 

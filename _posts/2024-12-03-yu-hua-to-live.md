@@ -3,6 +3,7 @@ layout: post
 title: "福贵的牛"
 date: 2024-12-03 23:30:00 +0800
 categories: [文存摘录]
+image: /assets/images/posts/yu-hua-to-live.jpg
 tags: [余华, 活着, 苦难, "2024"]
 ---
 

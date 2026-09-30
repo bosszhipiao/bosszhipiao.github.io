@@ -4,7 +4,7 @@ title: "嫦娥一念"
 date: 2026-08-28 23:36:00 +0800
 categories: [自撰集]
 tags: [短篇, 嫦娥, 离开, 一念, "2026"]
-image: /assets/images/categories/writing.jpg
+image: /assets/images/posts/change-one-thought.jpg
 ---
 
 她走的那天，我没拦。她说"我走了"，我说"好"。

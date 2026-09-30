@@ -3,6 +3,7 @@ layout: post
 title: "咖啡馆与那本书"
 date: 2025-05-17 16:20:00 +0800
 categories: [碎语集]
+image: /assets/images/posts/coffee-and-book.jpg
 tags: [咖啡馆, 走神, 自省, "2025"]
 ---
 

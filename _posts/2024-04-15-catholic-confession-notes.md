@@ -4,7 +4,7 @@ title: "《告解室里的灯》"
 date: 2024-04-15 23:30:00 +0800
 categories: [读书漫笔]
 tags: [格林, 权力与荣耀, 信仰, 怅然, "2024"]
-image: /assets/images/posts/stranger.jpg
+image: /assets/images/posts/catholic-confession-notes.jpg
 featured: true
 ---
 

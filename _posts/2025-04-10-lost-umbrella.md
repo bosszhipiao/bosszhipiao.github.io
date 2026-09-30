@@ -3,6 +3,7 @@ layout: post
 title: "丢了第三把伞"
 date: 2025-04-10 21:30:00 +0800
 categories: [自撰集]
+image: /assets/images/posts/lost-umbrella.jpg
 tags: [伞, 丢失, 物哀, "2025"]
 ---
 

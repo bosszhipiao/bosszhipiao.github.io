@@ -4,7 +4,7 @@ title: "雨夜旧书店"
 date: 2024-02-18 22:40:00 +0800
 categories: [自撰集]
 tags: [书店, 雨, 怅然, "2024"]
-image: /assets/images/posts/balcony-night.jpg
+image: /assets/images/posts/rainy-night-bookstore.jpg
 featured: true
 ---
 

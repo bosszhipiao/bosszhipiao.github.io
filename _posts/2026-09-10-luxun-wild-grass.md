@@ -3,6 +3,7 @@ layout: post
 title: "鲁迅《野草》摘抄"
 date: 2026-09-10 19:00:00 +0800
 categories: [文存摘录]
+image: /assets/images/posts/luxun-wild-grass.jpg
 tags: [鲁迅, 时代观察, 怅然, "2026"]
 source: 鲁迅《野草》，人民文学出版社
 ---

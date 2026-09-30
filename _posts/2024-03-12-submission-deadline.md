@@ -4,7 +4,7 @@ title: "交付截止日前夜"
 date: 2024-03-12 22:30:00 +0800
 categories: [职场札记]
 tags: [项目交付, 焦虑, 自省, "2024"]
-image: /assets/images/posts/meeting-room.jpg
+image: /assets/images/posts/submission-deadline.jpg
 featured: true
 ---
 

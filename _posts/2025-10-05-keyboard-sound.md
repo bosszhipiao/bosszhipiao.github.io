@@ -4,7 +4,7 @@ title: "键盘声里的夜"
 date: 2025-10-05 23:45:00 +0800
 categories: [碎语集]
 tags: [键盘, 深夜, 自省, "2025"]
-image: /assets/images/posts/balcony-night.jpg
+image: /assets/images/posts/keyboard-sound.jpg
 featured: true
 ---
 

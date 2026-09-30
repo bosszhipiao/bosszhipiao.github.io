@@ -4,7 +4,7 @@ title: "调薪失败那日"
 date: 2025-02-05 21:45:00 +0800
 categories: [职场札记]
 tags: [调薪, 失败, 怅然, 自省, "2025"]
-image: /assets/images/posts/balcony-night.jpg
+image: /assets/images/posts/salary-raise-failed.jpg
 ---
 
 谈话只用了七分钟。

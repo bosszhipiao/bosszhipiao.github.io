@@ -3,6 +3,7 @@ layout: post
 title: "冬日散步至河桥"
 date: 2026-06-07 17:20:00 +0800
 categories: [自撰集]
+image: /assets/images/posts/winter-walk.jpg
 tags: [散步, 冬日, 清醒, "2026"]
 featured: true
 ---

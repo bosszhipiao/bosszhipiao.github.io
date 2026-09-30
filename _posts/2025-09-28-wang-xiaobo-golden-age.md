@@ -3,6 +3,7 @@ layout: post
 title: "王二的逻辑"
 date: 2025-09-28 22:50:00 +0800
 categories: [文存摘录]
+image: /assets/images/posts/wang-xiaobo-golden-age.jpg
 tags: [王小波, 黄金时代, 反讽, "2025"]
 ---
 

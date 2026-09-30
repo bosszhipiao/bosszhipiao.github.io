@@ -4,7 +4,7 @@ title: "惘然录——读《人间失格》札记"
 date: 2026-08-06 21:42:00 +0800
 categories: [读书漫笔]
 tags: [太宰治, 人间失格, 惘然, 异化, "2026"]
-image: /assets/images/categories/reading.jpg
+image: /assets/images/posts/mang-ran-notes.jpg
 ---
 
 地铁里有人把"生而为人，我很抱歉"印在了咖啡杯套上。

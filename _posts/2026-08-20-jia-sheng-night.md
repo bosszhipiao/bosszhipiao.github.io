@@ -4,7 +4,7 @@ title: "贾生夜话——给加班同事的一封信"
 date: 2026-08-20 02:35:00 +0800
 categories: [职场札记]
 tags: [加班, 职场信, 贾生, "2026"]
-image: /assets/images/categories/workplace.jpg
+image: /assets/images/posts/jia-sheng-night.jpg
 ---
 
 凌晨两点，你还在工位上。我说"回家吧"，你笑了一下：再等等。

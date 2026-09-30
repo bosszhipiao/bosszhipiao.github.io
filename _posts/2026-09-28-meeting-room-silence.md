@@ -4,7 +4,7 @@ title: "会议室里的沉默"
 date: 2026-09-28 14:30:00 +0800
 categories: [职场札记]
 tags: [职场人际, 内耗, "2026"]
-image: /assets/images/categories/workplace.jpg
+image: /assets/images/posts/meeting-room-silence.jpg
 ---
 
 会议室里忽然安静下来。

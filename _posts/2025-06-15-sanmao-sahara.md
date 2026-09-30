@@ -4,7 +4,7 @@ title: "撒哈拉的星"
 date: 2025-06-15 21:40:00 +0800
 categories: [文存摘录]
 tags: [三毛, 撒哈拉, 流浪, "2025"]
-image: /assets/images/posts/eileen-chang.jpg
+image: /assets/images/posts/sanmao-sahara.jpg
 ---
 
 夏夜闷热，风扇转到最大也搅不散那点潮。我赤脚踩在地板上，从书架抽出《撒哈拉的故事》。

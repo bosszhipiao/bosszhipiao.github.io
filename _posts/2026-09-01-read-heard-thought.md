@@ -3,6 +3,7 @@ layout: post
 title: "读到的，听到的，想到的"
 date: 2026-09-01 23:45:00 +0800
 categories: [碎语集]
+image: /assets/images/posts/read-heard-thought.jpg
 tags: [自省, 生存感悟, 时代观察, "2026"]
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title: "地铁里的脸"
 date: 2024-01-30 23:00:00 +0800
 categories: [碎语集]
+image: /assets/images/posts/subway-faces.jpg
 tags: [地铁, 陌生人, 时代观察, "2024"]
 featured: true
 ---

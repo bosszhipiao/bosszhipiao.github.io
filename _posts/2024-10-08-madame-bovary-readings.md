@@ -3,6 +3,7 @@ layout: post
 title: "《爱玛的衣橱》"
 date: 2024-10-08 22:15:00 +0800
 categories: [读书漫笔]
+image: /assets/images/posts/madame-bovary-readings.jpg
 tags: [福楼拜, 包法利夫人, 欲望, 自省, "2024"]
 ---
 

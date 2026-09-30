@@ -4,7 +4,7 @@ title: "加班后的那碗面"
 date: 2026-05-09 22:50:00 +0800
 categories: [职场札记]
 tags: [加班, 夜食, 释然, "2026"]
-image: /assets/images/posts/noodle-bowl.jpg
+image: /assets/images/posts/overtime-dinner.jpg
 featured: true
 ---
 

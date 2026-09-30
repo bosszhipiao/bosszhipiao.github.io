@@ -1,4 +1,6 @@
 ---
+published: false                 # 模板文件，不构建、不收录
+sitemap: false
 layout: post
 title: "在这里填文章标题（要有钩子、有画面感）"
 date: 2026-10-15 22:30:00 +0800

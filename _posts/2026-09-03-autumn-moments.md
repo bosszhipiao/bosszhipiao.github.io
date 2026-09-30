@@ -3,6 +3,7 @@ layout: post
 title: "2026年秋天的几个瞬间"
 date: 2026-09-03 00:00:00 +0800
 categories: [碎语集]
+image: /assets/images/posts/autumn-moments.jpg
 tags: [深夜随想, 怅然, 治愈, "2026"]
 ---
 

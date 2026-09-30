@@ -3,6 +3,7 @@ layout: post
 title: "网文里的金句摘录"
 date: 2026-09-15 01:30:00 +0800
 categories: [文存摘录]
+image: /assets/images/posts/web-novel-excerpts.jpg
 tags: [网络小说, 治愈, 深夜随想, "2026"]
 source: 选自多部网络小说，仅作个人摘录收藏
 ---

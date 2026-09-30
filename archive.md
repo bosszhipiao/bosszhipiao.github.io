@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 时间长河
+description: 此间文字的时间长河：2024 至 2026 年的职场札记、读书笔记、网文摘录与原创随笔，按日期排列。
 permalink: /archive/
 ---
 

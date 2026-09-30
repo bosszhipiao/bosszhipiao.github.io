@@ -1,0 +1,32 @@
+{
+  "name": "此间文字",
+  "short_name": "此间文字",
+  "description": "一间安放文字的小室：读书漫笔、文存摘录、职场札记与碎语集。",
+  "lang": "zh-CN",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#efe8d8",
+  "theme_color": "#9a3a2c",
+  "icons": [
+    {
+      "src": "/assets/images/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/android-chrome-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/android-chrome-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

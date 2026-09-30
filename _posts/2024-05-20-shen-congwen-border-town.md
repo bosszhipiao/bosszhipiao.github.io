@@ -3,6 +3,7 @@ layout: post
 title: "边城的渡口"
 date: 2024-05-20 22:00:00 +0800
 categories: [文存摘录]
+image: /assets/images/posts/shen-congwen-border-town.jpg
 tags: [沈从文, 边城, 乡愁, 怅然, "2024"]
 featured: true
 ---

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 关于
+description: 关于此间文字——一个私人文学归档空间，记录职场观察、读书笔记、网文摘录、原创作品和零散语录。
 permalink: /about/
 ---
 
