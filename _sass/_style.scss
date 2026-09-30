@@ -1719,12 +1719,31 @@ p {
     padding: 26px 0 44px;
   }
 
+  /* 移动端不隐藏导航，改横向滚动避免挤窄；保留所有入口 */
   .site-nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 6px;
+    margin-top: -4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .site-nav::-webkit-scrollbar {
     display: none;
+  }
+  .site-nav a {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 6px 10px;
+    font-size: 0.86rem;
   }
 
   .nav-wrap {
+    flex-wrap: wrap;
     justify-content: space-between;
+    row-gap: 4px;
   }
 
   .footer-wrap {
@@ -1776,6 +1795,26 @@ p {
     bottom: 16px;
     width: 40px;
     height: 40px;
+  }
+
+  /* 文章页移动端更紧凑：缩小内边距、收紧行距 */
+  .article {
+    padding: 36px 0 50px;
+  }
+  .article-header {
+    margin-bottom: 28px;
+  }
+  .article-content {
+    font-size: 15.5px;
+    line-height: 1.95;
+  }
+  .article-content h2 {
+    font-size: 1.28rem;
+    margin-top: 2rem;
+  }
+  .article-content blockquote {
+    padding: 16px 20px 16px 24px;
+    margin: 1.4rem 0;
   }
 }
 
@@ -2554,4 +2593,46 @@ p {
 [data-theme="dark"] .article-tags a::before,
 [data-theme="dark"] .post-item-tags a::before {
   background: linear-gradient(110deg, transparent 35%, rgba(240, 232, 212, 0.35) 50%, transparent 65%);
+}
+
+/* 搜索页输入框 focus：暗底保持暗玻璃，不要瞬间变白 */
+[data-theme="dark"] .search-box input {
+  background: var(--glass-bg-strong);
+  border-color: var(--border-strong);
+}
+[data-theme="dark"] .search-box input:focus {
+  background: var(--glass-bg-strong);
+  border-color: var(--seal-red);
+  box-shadow: 0 0 0 4px rgba(196, 74, 60, 0.16), var(--shadow);
+}
+
+/* hero-title 朱砂印章：暗底阴影适配 */
+[data-theme="dark"] .hero-title::after {
+  box-shadow: 0 2px 6px rgba(196, 74, 60, 0.45), inset 0 0 0 1px rgba(245, 240, 227, 0.25);
+}
+
+/* 文章特色图：暗底下加深边框避免与背景粘连 */
+[data-theme="dark"] .featured-image img,
+[data-theme="dark"] .article-content img {
+  box-shadow: var(--shadow), 0 0 0 1px var(--border);
+}
+
+/* 上下篇导航：暗底玻璃 */
+[data-theme="dark"] .post-nav-item {
+  background: var(--glass-bg);
+}
+
+/* 引文「 装饰：暗底墨绿换月白偏淡 */
+[data-theme="dark"] .article-content blockquote::after {
+  color: var(--ink-green);
+  opacity: 0.4;
+}
+
+/* 移动端导航横向滚动：暗底分隔更清晰 */
+@media (max-width: 640px) {
+  [data-theme="dark"] .site-nav {
+    border-top: 1px solid var(--border);
+    margin-top: 2px;
+    padding-top: 4px;
+  }
 }
