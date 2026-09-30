@@ -1,7 +1,7 @@
-title: bosszhipiao
-email: your-email@example.com
+title: 此间文字
+email: private@localhost
 description: >-
-  我的个人博客，记录技术、生活和学习心得。
+  私人归档，自我梳理。记录所见、所思、所读。
 baseurl: ""
 url: "https://bosszhipiao.github.io"
 
@@ -26,7 +26,6 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      comments: true
       author: bosszhipiao
   - scope:
       path: ""
@@ -43,15 +42,5 @@ exclude:
   - .jekyll-cache
   - .gitignore
 
-include:
-  - .well-known
-
-utterances:
-  enabled: true
-  repo: bosszhipiao/bosszhipiao.github.io
-  issue-term: title
-  theme: github-light
-  label: comment
-
-paginate: 8
+paginate: 10
 paginate_path: "/page:num/"

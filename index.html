@@ -2,146 +2,181 @@
 layout: default
 ---
 
+<!-- 模块一：首页扉页 -->
 <section class="hero">
-  <div class="container hero-shell">
-    <div class="hero-copy">
-      <p class="eyebrow">PERSONAL BLOG</p>
-      <h1>把想法写成文章，让思考有温度。</h1>
-      <p class="lead">
-        我是 <strong>bosszhipiao</strong>，这里记录技术实践、阅读笔记、生活观察和成长经验。
-        关注前端、产品、设计与持续学习的点滴。
-      </p>
-      <div class="hero-actions">
-        <a class="button primary" href="#posts">阅读文章</a>
-        <a class="button secondary" href="{{ '/about/' | relative_url }}">关于我</a>
-      </div>
+  <div class="container">
+    <h1 class="hero-title">此间文字</h1>
+    <p class="hero-epigraph">
+      此间文字，只为自存。<br/>
+      记录所见、所思、所读。
+    </p>
+    <div class="hero-divider"><span class="divider-dot"></span></div>
+  </div>
+</section>
 
-      <div class="mini-stats">
-        <div>
-          <span class="num">12+</span>
-          <span class="label">文章</span>
-        </div>
-        <div>
-          <span class="num">6</span>
-          <span class="label">分类</span>
-        </div>
-        <div>
-          <span class="num">18</span>
-          <span class="label">标签</span>
-        </div>
+<!-- 分类导航区 -->
+<section class="category-nav">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <span class="section-label">文集</span>
+        <h2>分类导航</h2>
       </div>
     </div>
+    <div class="category-nav-grid">
+      <a class="category-nav-card" href="{{ '/categories/' | relative_url }}#职场札记">
+        <h3>职场札记</h3>
+        <p>职场观察、人际感悟</p>
+        <span class="cat-count">{{ site.categories['职场札记'].size | default: 0 }} 篇</span>
+      </a>
+      <a class="category-nav-card" href="{{ '/categories/' | relative_url }}#读书漫笔">
+        <h3>读书漫笔</h3>
+        <p>读书笔记、读后感悟</p>
+        <span class="cat-count">{{ site.categories['读书漫笔'].size | default: 0 }} 篇</span>
+      </a>
+      <a class="category-nav-card" href="{{ '/categories/' | relative_url }}#文存摘录">
+        <h3>文存摘录</h3>
+        <p>网文摘抄、经典段落</p>
+        <span class="cat-count">{{ site.categories['文存摘录'].size | default: 0 }} 篇</span>
+      </a>
+      <a class="category-nav-card" href="{{ '/categories/' | relative_url }}#自撰集">
+        <h3>自撰集</h3>
+        <p>原创随笔、短文故事</p>
+        <span class="cat-count">{{ site.categories['自撰集'].size | default: 0 }} 篇</span>
+      </a>
+      <a class="category-nav-card" href="{{ '/categories/' | relative_url }}#碎语集">
+        <h3>碎语集</h3>
+        <p>经典语录、碎片感悟</p>
+        <span class="cat-count">{{ site.categories['碎语集'].size | default: 0 }} 篇</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-    <aside class="profile-card">
-      <div class="avatar-ring">
-        <div class="avatar">B</div>
+<!-- 主体：最近落笔 + 侧边栏 -->
+<div class="container">
+  <div class="home-main">
+    <!-- 模块二：最近落笔 -->
+    <section class="home-content">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">近作</span>
+          <h2>最近落笔</h2>
+        </div>
+        <a class="link-more" href="{{ '/archive/' | relative_url }}">查看全部</a>
       </div>
-      <h3>bosszhipiao</h3>
-      <p>工程师 / 设计感学习者 / 记录者</p>
-      <div class="profile-links">
-        <a href="https://github.com/bosszhipiao" target="_blank" rel="noopener">GitHub</a>
-        <a href="{{ '/categories/' | relative_url }}">分类</a>
-        <a href="{{ '/tags/' | relative_url }}">标签</a>
+
+      <div class="post-list">
+        {% for post in site.posts limit: 10 %}
+        <article class="post-item">
+          <div class="post-item-date">{{ post.date | date: "%m月%d日" }}</div>
+          <div class="post-item-body">
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p class="post-item-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+            <div class="post-item-meta">
+              <div class="post-item-tags">
+                {% for tag in post.tags limit: 4 %}
+                  <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">#{{ tag }}</a>
+                {% endfor %}
+              </div>
+              {% assign words = post.content | strip_html | size %}
+              {% assign minutes = words | divided_by: 400 | at_least: 1 %}
+              <span class="post-item-reading">约 {{ minutes }} 分钟</span>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- 模块五：侧边辅助栏 -->
+    <aside class="sidebar">
+      <!-- 搜索小框 -->
+      <div class="sidebar-section sidebar-search">
+        <h3>搜寻</h3>
+        <form class="sidebar-search-form" action="{{ '/search/' | relative_url }}" method="get" role="search">
+          <input type="text" name="q" placeholder="关键词，如：阳台、卡夫卡、雨夜……" autocomplete="off" />
+          <button type="submit" aria-label="搜索">⌕</button>
+        </form>
+      </div>
+
+      <!-- 关于 -->
+      <div class="sidebar-section">
+        <h3>关于</h3>
+        <p class="about-blurb">
+          私人归档，自我梳理。<br/>
+          不面向外人，不讨好访客。<br/>
+          只为记录所见、所思、所读。
+        </p>
+      </div>
+
+      <!-- 时间归档 -->
+      <div class="sidebar-section">
+        <h3>时间归档</h3>
+        <ul class="archive-compact">
+          {% comment %}收集年份并去重排序{% endcomment %}
+          {% capture years_str %}{% for post in site.posts %}{{ post.date | date: "%Y" }}|{% endfor %}{% endcapture %}
+          {% assign all_years = years_str | split: "|" | uniq | sort | reverse %}
+          {% for year in all_years %}
+            {% if year == "" %}{% continue %}{% endif %}
+            {% assign count = 0 %}
+            {% for post in site.posts %}
+              {% assign post_year = post.date | date: "%Y" %}
+              {% if post_year == year %}{% assign count = count | plus: 1 %}{% endif %}
+            {% endfor %}
+            <li>
+              <a href="{{ '/archive/' | relative_url }}#{{ year }}">{{ year }}年</a>
+              <span>{{ count }} 篇</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- 标签云 -->
+      <div class="sidebar-section">
+        <h3>标签云</h3>
+        <div class="tag-cloud">
+          {% for tag in site.tags %}
+            {% assign count = tag[1].size %}
+            {% if count >= 10 %}
+              {% assign size_class = 'tag-size-4' %}
+            {% elsif count >= 6 %}
+              {% assign size_class = 'tag-size-3' %}
+            {% elsif count >= 3 %}
+              {% assign size_class = 'tag-size-2' %}
+            {% else %}
+              {% assign size_class = 'tag-size-1' %}
+            {% endif %}
+            <a href="{{ '/tags/' | relative_url }}#{{ tag[0] | slugify }}"
+               class="{{ size_class }}"
+               title="{{ count }} 篇">#{{ tag[0] }}</a>
+          {% endfor %}
+        </div>
       </div>
     </aside>
   </div>
-</section>
+</div>
 
-<section class="feature-strip container">
-  <div class="feature-card">
-    <span class="feature-kicker">Focus</span>
-    <h3>技术输出</h3>
-    <p>记录工程实践、开发心得和学习笔记。</p>
-  </div>
-  <div class="feature-card">
-    <span class="feature-kicker">Thought</span>
-    <h3>思考沉淀</h3>
-    <p>把碎片化灵感串联成更稳定的认知结构。</p>
-  </div>
-  <div class="feature-card">
-    <span class="feature-kicker">Life</span>
-    <h3>生活记录</h3>
-    <p>见闻、观察和步履，构成真实而丰富的人生。</p>
-  </div>
-</section>
-
-<section class="categories container">
-  <div class="section-heading">
-    <p class="eyebrow">CATEGORIES</p>
-    <h2>关注内容</h2>
-  </div>
-
-  <div class="category-grid">
-    <a class="category-card" href="{{ '/categories/' | relative_url }}#技术">
-      <span class="tag-pill">技术</span>
-      <strong>开发与工程</strong>
-      <small>前端、架构、效率提升</small>
-    </a>
-    <a class="category-card" href="{{ '/categories/' | relative_url }}#学习">
-      <span class="tag-pill">学习</span>
-      <strong>持续成长</strong>
-      <small>阅读、复盘、实践总结</small>
-    </a>
-    <a class="category-card" href="{{ '/categories/' | relative_url }}#生活">
-      <span class="tag-pill">生活</span>
-      <strong>日常记录</strong>
-      <small>观察、感悟和经验</small>
-    </a>
-  </div>
-</section>
-
-<section id="posts" class="posts container">
-  <div class="section-heading split">
-    <div>
-      <p class="eyebrow">LATEST</p>
-      <h2>最新文章</h2>
+<!-- 模块四：精选归档 -->
+{% assign featured = site.posts | where: "featured", true %}
+{% if featured.size > 0 %}
+<section class="featured-section">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <span class="section-label">自留精华</span>
+        <h2>精选归档</h2>
+      </div>
     </div>
-    <a class="link-more" href="{{ '/categories/' | relative_url }}">查看全部</a>
-  </div>
-
-  <div class="post-grid">
-    {% for post in site.posts limit: 6 %}
-      <article class="post-card">
-        {% if post.image %}
-          <a href="{{ post.url | relative_url }}" class="post-image">
-            <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" />
-          </a>
-        {% endif %}
-
-        <div class="post-body">
-          <div class="meta">
-            <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-            {% if post.categories %}
-              <span>•</span>
-              {% for category in post.categories %}
-                <span>{{ category }}</span>
-              {% endfor %}
-            {% endif %}
-          </div>
-
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
-
-          <div class="tags">
-            {% for tag in post.tags limit: 3 %}
-              <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">#{{ tag }}</a>
-            {% endfor %}
-          </div>
-        </div>
+    <div class="featured-list">
+      {% for post in featured limit: 6 %}
+      <article class="featured-card">
+        <p class="featured-date">{{ post.date | date: "%Y年%m月%d日" }}</p>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt | strip_html | truncate: 80 }}</p>
       </article>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
 </section>
-
-<section class="tag-cloud-wrap container">
-  <div class="section-heading">
-    <p class="eyebrow">TOPICS</p>
-    <h2>热门标签</h2>
-  </div>
-
-  <div class="tag-cloud">
-    {% for tag in site.tags limit: 8 %}
-      <a href="{{ '/tags/' | relative_url }}#{{ tag[0] | slugify }}">#{{ tag[0] }}</a>
-    {% endfor %}
-  </div>
-</section>
+{% endif %}

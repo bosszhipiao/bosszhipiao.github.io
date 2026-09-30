@@ -1,0 +1,137 @@
+---
+layout: default
+title: 搜索
+permalink: /search/
+---
+
+<section class="container page-section search-page">
+  <h1>搜寻</h1>
+  <p class="search-hint">在三十余篇旧字里找一句话、一个人、一个黄昏。</p>
+
+  <div class="search-box">
+    <input id="search-input" type="text" placeholder="输入关键词，如：阳台、卡夫卡、加班、雨夜……" autocomplete="off" />
+    <span class="search-icon" aria-hidden="true">⌕</span>
+  </div>
+
+  <div class="search-stats">
+    <span id="search-count">共收录 <strong>{{ site.posts.size }}</strong> 篇</span>
+  </div>
+
+  <ul id="search-results" class="search-results"></ul>
+
+  <div id="search-empty" class="search-empty" hidden>
+    <p>未找到。也许它写在另一本书里。</p>
+  </div>
+</section>
+
+<script>
+  // 文章索引（在页面加载时内联，避免额外 HTTP 请求）
+  var POSTS = [
+    {% for post in site.posts %}
+    {
+      title: {{ post.title | jsonify }},
+      url: {{ post.url | relative_url | jsonify }},
+      date: {{ post.date | date: "%Y-%m-%d" | jsonify }},
+      date_display: {{ post.date | date: "%Y年%m月%d日" | jsonify }},
+      categories: {{ post.categories | jsonify }},
+      tags: {{ post.tags | jsonify }},
+      excerpt: {{ post.excerpt | strip_html | strip_newlines | truncate: 120 | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+
+  var input = document.getElementById('search-input');
+  var resultsEl = document.getElementById('search-results');
+  var emptyEl = document.getElementById('search-empty');
+  var countEl = document.getElementById('search-count');
+
+  function normalize(str) {
+    return (str || '').toString().toLowerCase().replace(/\s+/g, '');
+  }
+
+  function escapeHtml(s) {
+    return (s || '').toString()
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function highlight(text, query) {
+    if (!query) return escapeHtml(text);
+    var idx = normalize(text).indexOf(normalize(query));
+    if (idx < 0) return escapeHtml(text);
+    // 由于 normalize 删了空格，原文定位不准，这里退化为纯转义
+    return escapeHtml(text);
+  }
+
+  function render(query) {
+    var q = query.trim();
+    var nq = normalize(q);
+    resultsEl.innerHTML = '';
+    if (!q) {
+      emptyEl.hidden = true;
+      countEl.innerHTML = '共收录 <strong>' + POSTS.length + '</strong> 篇';
+      return;
+    }
+    var matched = [];
+    for (var i = 0; i < POSTS.length; i++) {
+      var p = POSTS[i];
+      var hay = normalize(
+        p.title + ' ' + p.excerpt + ' ' +
+        (p.categories || []).join(' ') + ' ' +
+        (p.tags || []).join(' ')
+      );
+      if (hay.indexOf(nq) >= 0) matched.push(p);
+    }
+
+    countEl.innerHTML = '命中 <strong>' + matched.length + '</strong> / ' + POSTS.length + ' 篇';
+
+    if (matched.length === 0) {
+      emptyEl.hidden = false;
+      return;
+    }
+    emptyEl.hidden = true;
+
+    var frag = document.createDocumentFragment();
+    for (var j = 0; j < matched.length; j++) {
+      var m = matched[j];
+      var li = document.createElement('li');
+      li.className = 'search-item';
+      li.innerHTML =
+        '<div class="search-item-meta">' +
+          '<span class="search-item-date">' + escapeHtml(m.date_display) + '</span>' +
+          '<span class="search-item-cats">' +
+            (m.categories || []).map(function(c){ return escapeHtml(c); }).join(' · ') +
+          '</span>' +
+        '</div>' +
+        '<a class="search-item-title" href="' + m.url + '">' + highlight(m.title, q) + '</a>' +
+        '<div class="search-item-excerpt">' + escapeHtml(m.excerpt) + '</div>' +
+        '<div class="search-item-tags">' +
+          (m.tags || []).map(function(t){
+            return '<span class="search-item-tag">' + escapeHtml(t) + '</span>';
+          }).join('') +
+        '</div>';
+      frag.appendChild(li);
+    }
+    resultsEl.appendChild(frag);
+  }
+
+  // 节流
+  var timer = null;
+  input.addEventListener('input', function(){
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(function(){ render(input.value); }, 120);
+  });
+
+  // 支持 URL 参数预填：?q=卡夫卡
+  var params = new URLSearchParams(window.location.search);
+  var preset = params.get('q');
+  if (preset) {
+    input.value = preset;
+    render(preset);
+  }
+
+  // 自动聚焦
+  input.focus();
+</script>

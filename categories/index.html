@@ -12,7 +12,10 @@ permalink: /categories/
         <h2>{{ category[0] }}</h2>
         <ul>
           {% for post in category[1] %}
-            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+            <li>
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              <span style="color:var(--muted);font-size:0.82rem;margin-left:8px;">{{ post.date | date: "%Y-%m-%d" }}</span>
+            </li>
           {% endfor %}
         </ul>
       </div>
