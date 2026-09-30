@@ -2519,6 +2519,55 @@ p {
 [data-theme="dark"] .article-content table tbody tr:nth-child(even) {
   background: rgba(255, 255, 255, 0.03);
 }
+
+/* 暗色模式：行内 code + 代码块 用更深墨底，避免亮米色显示成"太白" */
+[data-theme="dark"] .article-content code {
+  background: #0f1113;
+  color: var(--primary-deep);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+}
+[data-theme="dark"] .article-content pre {
+  background: #0f1113;
+  border-color: var(--border-strong);
+  box-shadow: var(--glass-highlight), 0 2px 12px rgba(0, 0, 0, 0.55);
+}
+[data-theme="dark"] .article-content pre code {
+  background: transparent;
+  border: none;
+  color: var(--text-soft);
+  box-shadow: none;
+}
+
+/* Rouge 语法高亮：暗底 token 基础配色（文人色系） */
+[data-theme="dark"] .highlight .c,
+[data-theme="dark"] .highlight .cm,
+[data-theme="dark"] .highlight .c1,
+[data-theme="dark"] .highlight .ch { color: #6e6759; font-style: italic; }
+[data-theme="dark"] .highlight .k,
+[data-theme="dark"] .highlight .kc,
+[data-theme="dark"] .highlight .kd,
+[data-theme="dark"] .highlight .kp,
+[data-theme="dark"] .highlight .kr { color: #c4884a; font-weight: 600; }
+[data-theme="dark"] .highlight .s,
+[data-theme="dark"] .highlight .s1,
+[data-theme="dark"] .highlight .s2,
+[data-theme="dark"] .highlight .sr,
+[data-theme="dark"] .highlight .se { color: #b8c47e; }
+[data-theme="dark"] .highlight .n,
+[data-theme="dark"] .highlight .nf,
+[data-theme="dark"] .highlight .nc,
+[data-theme="dark"] .highlight .nn,
+[data-theme="dark"] .highlight .nv { color: #d4ccba; }
+[data-theme="dark"] .highlight .o,
+[data-theme="dark"] .highlight .p { color: #8a8275; }
+[data-theme="dark"] .highlight .mi,
+[data-theme="dark"] .highlight .mf,
+[data-theme="dark"] .highlight .mb,
+[data-theme="dark"] .highlight .mh { color: #c44a3c; }
+[data-theme="dark"] .highlight .gh { color: #c9b899; font-weight: 700; }
+[data-theme="dark"] .highlight .gd { color: #c44a3c; background: rgba(196, 74, 60, 0.10); }
+[data-theme="dark"] .highlight .gi { color: #7a8a78; background: rgba(122, 138, 120, 0.10); }
 [data-theme="dark"] .article-content table tbody tr:hover {
   background: rgba(196, 74, 60, 0.10);
 }
