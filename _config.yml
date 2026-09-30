@@ -9,6 +9,7 @@ permalink: /:categories/:title/
 markdown: kramdown
 highlighter: rouge
 timezone: Asia/Shanghai
+future: true
 
 plugins:
   - jekyll-feed
