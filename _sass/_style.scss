@@ -2488,6 +2488,27 @@ p {
   background: rgba(196, 74, 60, 0.10);
 }
 
+/* 分类导航区：去掉米白渐变，换冷墨晕 */
+[data-theme="dark"] .category-nav {
+  background:
+    linear-gradient(180deg, rgba(40, 44, 48, 0.45), transparent),
+    var(--bg);
+  border-color: var(--border);
+}
+
+/* 分类卡片：暗玻璃 + 冷墨渐变，不再发白 */
+[data-theme="dark"] .category-nav-card {
+  background:
+    linear-gradient(135deg, rgba(50, 54, 58, 0.45), transparent 60%),
+    var(--glass-bg);
+}
+
+[data-theme="dark"] .category-nav-card:hover {
+  background:
+    linear-gradient(135deg, rgba(60, 64, 68, 0.55), transparent 70%),
+    var(--glass-bg-strong);
+}
+
 /* 主题切换按钮：暗态微调 */
 [data-theme="dark"] .theme-toggle {
   background: rgba(40, 44, 48, 0.65);
