@@ -532,10 +532,20 @@ p {
 
 .post-item-body h3 a {
   color: var(--text);
+  transition: color 0.25s var(--ease);
 }
 
 .post-item-body h3 a:hover {
   color: var(--primary);
+}
+
+/* 卡片整体 hover 时，标题自动变色，无需精确悬停在 a 上 */
+.post-item:hover .post-item-body h3 a {
+  color: var(--primary);
+}
+
+.post-item:hover .post-item-body h3 a:hover {
+  color: var(--seal-red-deep);
 }
 
 .post-item-excerpt {
@@ -784,10 +794,20 @@ p {
 
 .featured-card h3 a {
   color: var(--text);
+  transition: color 0.25s var(--ease);
 }
 
 .featured-card h3 a:hover {
   color: var(--primary);
+}
+
+/* 卡片整体 hover 时，标题自动变色 */
+.featured-card:hover h3 a {
+  color: var(--primary);
+}
+
+.featured-card:hover h3 a:hover {
+  color: var(--seal-red-deep);
 }
 
 .featured-card .featured-date {
@@ -2160,6 +2180,20 @@ p {
   opacity: 0.78;
 }
 
+/* mark 高亮：朱砂淡底（替代浏览器默认黄底，与文学基调协调） */
+.article-content mark {
+  background: rgba(154, 58, 44, 0.12);
+  color: var(--seal-red-deep);
+  padding: 1px 5px;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 rgba(154, 58, 44, 0.3);
+  transition: background 0.25s var(--ease);
+}
+
+.article-content mark:hover {
+  background: rgba(154, 58, 44, 0.20);
+}
+
 .article-content kbd {
   display: inline-block;
   padding: 1px 7px;
@@ -2684,4 +2718,15 @@ p {
     margin-top: 2px;
     padding-top: 4px;
   }
+}
+
+/* 暗色模式：mark 高亮用淡朱砂底（替代默认亮黄底） */
+[data-theme="dark"] .article-content mark {
+  background: rgba(196, 74, 60, 0.22);
+  color: var(--primary-deep);
+  box-shadow: inset 0 -1px 0 rgba(196, 74, 60, 0.45);
+}
+
+[data-theme="dark"] .article-content mark:hover {
+  background: rgba(196, 74, 60, 0.32);
 }
