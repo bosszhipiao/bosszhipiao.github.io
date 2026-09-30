@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "碧城杂俎"
-date: 2026-10-30 02:11:00 +0800
+date: 2026-08-17 02:11:00 +0800
 categories: [碎语集]
 tags: [碎片, 杂俎, 碧城, 自存, "2026"]
 image: /assets/images/categories/fragments.jpg

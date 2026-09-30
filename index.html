@@ -24,27 +24,32 @@ layout: default
       </div>
     </div>
     <div class="category-nav-grid">
-      <a class="category-nav-card" href="{{ '/categories/' | relative_url }}#职场札记">
+      <a class="category-nav-card cat-workplace" href="{{ '/categories/' | relative_url }}#职场札记">
+        <span class="cat-watermark" aria-hidden="true">壹</span>
         <h3>职场札记</h3>
         <p>职场观察、人际感悟</p>
         <span class="cat-count">{{ site.categories['职场札记'].size | default: 0 }} 篇</span>
       </a>
-      <a class="category-nav-card" href="{{ '/categories/' | relative_url }}#读书漫笔">
+      <a class="category-nav-card cat-reading" href="{{ '/categories/' | relative_url }}#读书漫笔">
+        <span class="cat-watermark" aria-hidden="true">贰</span>
         <h3>读书漫笔</h3>
         <p>读书笔记、读后感悟</p>
         <span class="cat-count">{{ site.categories['读书漫笔'].size | default: 0 }} 篇</span>
       </a>
-      <a class="category-nav-card" href="{{ '/categories/' | relative_url }}#文存摘录">
+      <a class="category-nav-card cat-excerpt" href="{{ '/categories/' | relative_url }}#文存摘录">
+        <span class="cat-watermark" aria-hidden="true">叁</span>
         <h3>文存摘录</h3>
         <p>网文摘抄、经典段落</p>
         <span class="cat-count">{{ site.categories['文存摘录'].size | default: 0 }} 篇</span>
       </a>
-      <a class="category-nav-card" href="{{ '/categories/' | relative_url }}#自撰集">
+      <a class="category-nav-card cat-writing" href="{{ '/categories/' | relative_url }}#自撰集">
+        <span class="cat-watermark" aria-hidden="true">肆</span>
         <h3>自撰集</h3>
         <p>原创随笔、短文故事</p>
         <span class="cat-count">{{ site.categories['自撰集'].size | default: 0 }} 篇</span>
       </a>
-      <a class="category-nav-card" href="{{ '/categories/' | relative_url }}#碎语集">
+      <a class="category-nav-card cat-fragments" href="{{ '/categories/' | relative_url }}#碎语集">
+        <span class="cat-watermark" aria-hidden="true">伍</span>
         <h3>碎语集</h3>
         <p>经典语录、碎片感悟</p>
         <span class="cat-count">{{ site.categories['碎语集'].size | default: 0 }} 篇</span>

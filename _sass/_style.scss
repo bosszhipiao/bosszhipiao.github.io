@@ -30,6 +30,7 @@ html {
   --ink-green: #4a5a48;           /* 墨绿 */
   --ink-blue: #2e4252;            /* 黛青 */
   --ochre: #a8744a;               /* 赭石 */
+  --rattan: #a07c33;              /* 藤黄 */
   --moon-white: #f5f0e3;          /* 月白 */
   --xuan-paper: #efe8d8;          /* 宣纸色 */
 
@@ -98,6 +99,17 @@ a {
 
 a:hover {
   color: var(--primary);
+}
+
+/* 键盘导航焦点：朱砂描边，不打扰鼠标用户 */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.post-nav-item:focus-visible,
+.category-nav-card:focus-visible {
+  outline: 2px solid var(--seal-red);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
 }
 
 img {
@@ -226,6 +238,7 @@ p {
   pointer-events: none;
   z-index: -1;
   filter: blur(20px);
+  animation: heroHalo 9s ease-in-out infinite;
 }
 
 /* hero 周围的纸纹晕开 */
@@ -276,6 +289,7 @@ p {
     border-radius: 4px;
     box-shadow: 0 2px 6px rgba(154, 58, 44, 0.35), inset 0 0 0 1px rgba(245, 240, 227, 0.3);
     transform: rotate(-6deg);
+    animation: sealSway 7s ease-in-out infinite;
     background-clip: padding-box;
     -webkit-text-fill-color: var(--moon-white);
     opacity: 0.92;
@@ -514,6 +528,12 @@ p {
   width: 8px;
   height: 1px;
   background: var(--accent);
+  transition: width 0.35s var(--ease), background 0.35s var(--ease);
+}
+
+.post-item:hover .post-item-date::before {
+  width: 18px;
+  background: var(--seal-red);
 }
 
 .post-item-body {
@@ -636,6 +656,10 @@ p {
 }
 
 .category-nav-card {
+  /* 默认文人色（被各 cat-* 修饰类覆盖） */
+  --cat: var(--accent);
+  --cat-ink: var(--primary-deep);
+  --cat-glow: rgba(125, 102, 80, 0.22);
   padding: 34px 22px 28px;
   background:
     linear-gradient(135deg, rgba(245, 240, 227, 0.4), transparent 60%),
@@ -651,7 +675,14 @@ p {
   box-shadow: var(--glass-highlight), var(--shadow-sm);
 }
 
-/* 分类卡片右上角朱砂小印章（hover 显形） */
+/* 五分类各配一色：赭石 / 黛青 / 墨绿 / 朱砂 / 藤黄 */
+.category-nav-card.cat-workplace { --cat: var(--ochre);    --cat-ink: #6e4a2a; --cat-glow: rgba(168, 116, 74, 0.28); }
+.category-nav-card.cat-reading   { --cat: var(--ink-blue); --cat-ink: #243544; --cat-glow: rgba(46, 66, 82, 0.26); }
+.category-nav-card.cat-excerpt   { --cat: var(--ink-green);--cat-ink: #33422f; --cat-glow: rgba(74, 90, 72, 0.26); }
+.category-nav-card.cat-writing   { --cat: var(--seal-red); --cat-ink: var(--seal-red-deep); --cat-glow: rgba(154, 58, 44, 0.26); }
+.category-nav-card.cat-fragments { --cat: var(--rattan);   --cat-ink: #6f531f; --cat-glow: rgba(160, 124, 51, 0.26); }
+
+/* 分类卡片右上角小色印（hover 显形） */
 .category-nav-card::before {
   content: "";
   position: absolute;
@@ -659,12 +690,12 @@ p {
   right: 14px;
   width: 0;
   height: 0;
-  background: var(--seal-red);
+  background: var(--cat);
   border-radius: 3px;
   transform: rotate(-4deg);
   opacity: 0;
   transition: all 0.45s var(--ease);
-  box-shadow: 0 2px 6px rgba(154, 58, 44, 0.35);
+  box-shadow: 0 2px 6px var(--cat-glow);
   z-index: 2;
 }
 
@@ -677,7 +708,7 @@ p {
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--seal-red), var(--ink-green), transparent);
+  background: linear-gradient(90deg, transparent, var(--cat), transparent);
   transition: width 0.4s var(--ease);
 }
 
@@ -685,9 +716,12 @@ p {
   background:
     linear-gradient(135deg, rgba(245, 240, 227, 0.6), transparent 70%),
     var(--glass-bg-strong);
-  box-shadow: var(--glass-highlight), var(--shadow-hover);
+  box-shadow:
+    var(--glass-highlight),
+    var(--shadow-hover),
+    0 24px 52px -22px var(--cat-glow);
   transform: translateY(-4px);
-  border-color: var(--accent-soft);
+  border-color: var(--cat);
 }
 
 .category-nav-card:hover::before {
@@ -700,6 +734,29 @@ p {
   width: 70%;
 }
 
+/* 篆体序号水印：壹贰叁肆伍 */
+.category-nav-card .cat-watermark {
+  position: absolute;
+  right: 12px;
+  bottom: 2px;
+  font-family: var(--serif);
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--cat);
+  opacity: 0.07;
+  transform: translateY(0);
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.category-nav-card:hover .cat-watermark {
+  opacity: 0.15;
+  transform: translateY(-4px) rotate(-5deg);
+}
+
 .category-nav-card h3 {
   font-family: var(--serif);
   margin: 0 0 10px;
@@ -709,6 +766,11 @@ p {
   letter-spacing: 0.04em;
   position: relative;
   z-index: 1;
+  transition: color 0.3s var(--ease);
+}
+
+.category-nav-card:hover h3 {
+  color: var(--cat-ink);
 }
 
 .category-nav-card p {
@@ -734,6 +796,27 @@ p {
   box-shadow: var(--glass-highlight);
   position: relative;
   z-index: 1;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.category-nav-card:hover .cat-count {
+  color: var(--cat-ink);
+  border-color: var(--cat);
+}
+
+/* 分类页分组沿用同一套色 */
+.category-group.cat-workplace { --cat: var(--ochre);    --cat-ink: #6e4a2a; }
+.category-group.cat-reading   { --cat: var(--ink-blue); --cat-ink: #243544; }
+.category-group.cat-excerpt   { --cat: var(--ink-green);--cat-ink: #33422f; }
+.category-group.cat-writing   { --cat: var(--seal-red); --cat-ink: var(--seal-red-deep); }
+.category-group.cat-fragments { --cat: var(--rattan);   --cat-ink: #6f531f; }
+
+.category-group[class*="cat-"]::before {
+  background: var(--cat);
+}
+
+.category-group[class*="cat-"] h2 {
+  color: var(--cat-ink);
 }
 
 /* ===== 精选归档 ===== */
@@ -1691,6 +1774,17 @@ p {
   transform: translateY(0);
 }
 
+/* Hero 光晕呼吸、印章轻摆 */
+@keyframes heroHalo {
+  0%, 100% { opacity: 0.85; transform: translate(-50%, -50%) scale(1); }
+  50%      { opacity: 1;    transform: translate(-50%, -52%) scale(1.06); }
+}
+
+@keyframes sealSway {
+  0%, 100% { transform: rotate(-6deg); }
+  50%      { transform: rotate(-2deg) translateY(-3px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
@@ -1698,6 +1792,8 @@ p {
     transition: none;
   }
   .reading-progress { transition: none; }
+  .hero::before,
+  .hero-title::after { animation: none; }
   * { scroll-behavior: auto !important; }
 }
 
@@ -1705,11 +1801,24 @@ p {
 @media (max-width: 900px) {
   .home-main {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
   }
 
+  /* 内容优先：仅搜索框提到最前，关于 / 时间归档 / 标签云退到文章列表之后 */
   .sidebar {
+    display: contents;
+  }
+
+  .sidebar-search {
     order: -1;
+  }
+
+  .home-content {
+    order: 0;
+  }
+
+  .sidebar .sidebar-section:not(.sidebar-search) {
+    order: 2;
   }
 
   .site-nav {
@@ -1804,6 +1913,11 @@ p {
 
   .post-nav {
     grid-template-columns: 1fr;
+  }
+
+  /* 单列下隐藏不存在的“上/下一篇”占位，避免大片空白 */
+  .post-nav-item.placeholder {
+    display: none;
   }
 
   .post-nav-item.next {
@@ -2446,6 +2560,7 @@ p {
   --ink-green: #7a8a78;
   --ink-blue: #5e7282;
   --ochre: #c4884a;
+  --rattan: #c2a056;              /* 藤黄暗底提亮 */
   --moon-white: #f5f0e3;          /* 保留月白：用于印章文字/kbd 等前景 */
   --xuan-paper: #1a1d1f;          /* 宣纸翻墨青 */
 
@@ -2640,6 +2755,35 @@ p {
   background:
     linear-gradient(135deg, rgba(60, 64, 68, 0.55), transparent 70%),
     var(--glass-bg-strong);
+}
+
+/* 文人色暗底提亮：标题与篇数胶囊用浅墨色，保证可读 */
+[data-theme="dark"] .category-nav-card.cat-workplace,
+[data-theme="dark"] .category-group.cat-workplace { --cat-ink: #e4bd94; --cat-glow: rgba(196, 136, 74, 0.20); }
+[data-theme="dark"] .category-nav-card.cat-reading,
+[data-theme="dark"] .category-group.cat-reading   { --cat-ink: #a8c2d4; --cat-glow: rgba(94, 114, 130, 0.22); }
+[data-theme="dark"] .category-nav-card.cat-excerpt,
+[data-theme="dark"] .category-group.cat-excerpt   { --cat-ink: #a6bba2; --cat-glow: rgba(122, 138, 120, 0.20); }
+[data-theme="dark"] .category-nav-card.cat-writing,
+[data-theme="dark"] .category-group.cat-writing   { --cat-ink: #e08a7c; --cat-glow: rgba(196, 74, 60, 0.22); }
+[data-theme="dark"] .category-nav-card.cat-fragments,
+[data-theme="dark"] .category-group.cat-fragments { --cat-ink: #ddc285; --cat-glow: rgba(194, 160, 86, 0.20); }
+
+[data-theme="dark"] .category-nav-card .cat-watermark {
+  opacity: 0.1;
+}
+
+[data-theme="dark"] .category-nav-card:hover .cat-watermark {
+  opacity: 0.22;
+}
+
+/* 键盘焦点暗底用暖琥珀 */
+[data-theme="dark"] a:focus-visible,
+[data-theme="dark"] button:focus-visible,
+[data-theme="dark"] input:focus-visible,
+[data-theme="dark"] .post-nav-item:focus-visible,
+[data-theme="dark"] .category-nav-card:focus-visible {
+  outline-color: var(--accent);
 }
 
 /* 主题切换按钮：暗态微调 */

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "青天夜心——古人失眠录"
-date: 2026-10-18 23:05:00 +0800
+date: 2026-08-09 23:05:00 +0800
 categories: [文存摘录]
 tags: [古诗词, 失眠, 摘录, 青天夜心, "2026"]
 image: /assets/images/categories/excerpt.jpg

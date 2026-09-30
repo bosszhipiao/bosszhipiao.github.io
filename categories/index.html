@@ -8,7 +8,14 @@ permalink: /categories/
   <h1>分类</h1>
   <div class="category-list">
     {% for category in site.categories %}
-      <div id="{{ category[0] | slugify }}" class="category-group">
+      {% assign cname = category[0] %}
+      {% if cname == '职场札记' %}{% assign ccat = 'cat-workplace' %}
+      {% elsif cname == '读书漫笔' %}{% assign ccat = 'cat-reading' %}
+      {% elsif cname == '文存摘录' %}{% assign ccat = 'cat-excerpt' %}
+      {% elsif cname == '自撰集' %}{% assign ccat = 'cat-writing' %}
+      {% elsif cname == '碎语集' %}{% assign ccat = 'cat-fragments' %}
+      {% else %}{% assign ccat = '' %}{% endif %}
+      <div id="{{ category[0] | slugify }}" class="category-group {{ ccat }}">
         <h2>{{ category[0] }}</h2>
         <ul>
           {% for post in category[1] %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "嫦娥一念"
-date: 2026-11-22 23:36:00 +0800
+date: 2026-08-28 23:36:00 +0800
 categories: [自撰集]
 tags: [短篇, 嫦娥, 离开, 一念, "2026"]
 image: /assets/images/categories/writing.jpg
