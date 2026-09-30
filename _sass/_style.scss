@@ -2454,6 +2454,17 @@ p {
   border-color: var(--seal-red);
 }
 
+/* 侧边栏搜索按钮：暗底用深墨褐渐变，月白文字才看得清 */
+[data-theme="dark"] .sidebar-search-form button {
+  background: linear-gradient(135deg, #4a3a2a, #6a5440);
+  color: var(--moon-white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+[data-theme="dark"] .sidebar-search-form button:hover {
+  background: linear-gradient(135deg, var(--seal-red), var(--seal-red-deep));
+  box-shadow: 0 4px 10px rgba(196, 74, 60, 0.45);
+}
+
 /* kbd：暗底键帽 */
 [data-theme="dark"] .article-content kbd {
   background: linear-gradient(180deg, rgba(40, 44, 48, 0.95), rgba(26, 30, 33, 0.95));
