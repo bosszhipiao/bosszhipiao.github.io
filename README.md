@@ -1,65 +1,53 @@
-# 个人博客
+# GitHub Pages 个人博客
 
-这是一个基于 GitHub Pages + Jekyll 的个人博客模板，适合写技术文章、生活记录、学习笔记和项目分享。
+这是一个基于 GitHub Pages + Jekyll 的个人博客模板，适合写技术文章、学习笔记和生活记录。
 
-## 功能
-
-- Markdown 文章发布
-- 分类与标签页
-- 图片展示与文章封面
-- Utterances 评论系统
-- 响应式博客主页
-- GitHub Pages 一键部署
-
-## 本地预览
+## 运行方式
 
 ```bash
 bundle install
 bundle exec jekyll serve --livereload
 ```
 
-访问：http://localhost:4000
+本地访问：
 
-## 发布
+```text
+http://localhost:4000
+```
 
-直接推送到 GitHub 的 `main` 分支，GitHub Pages 会自动部署。
+## 部署方式
+
+直接推送到 `main` 分支，GitHub Pages 会自动部署。
 
 ```bash
 git add .
-git commit -m "feat: setup personal blog"
+git commit -m "feat: publish blog"
 git push origin main
 ```
 
-## 文章示例
+## 结构说明
 
-新文章放在 `_posts/` 目录下，命名格式：
-
-```text
-_posts/YYYY-MM-DD-文章标题.md
-```
-
-示例 Front Matter：
-
-```yaml
----
-layout: post
-title: "我的第一篇文章"
-date: 2026-09-30 09:00:00 +0800
-categories: [技术]
-tags: [GitHub Pages, Jekyll]
-image: /assets/images/posts/cover.jpg
-comments: true
----
-```
-
-## 目录说明
-
-- `_posts/`：博客文章
+- `_posts/`：博客文章目录
 - `_layouts/`：页面模板
 - `_includes/`：可复用组件
-- `assets/`：CSS、JS、图片
-- `categories/`、`tags/`：分类与标签页面
+- `assets/css/`：样式文件
+- `categories/`：分类页面
+- `tags/`：标签页面
+- `archive/`：归档页面
+- `search/`：搜索页面
+- `about.md`：个人介绍
 
-## 备注
+## 推荐写作方式
 
-这个仓库已经配置为 GitHub Pages 站点，适合用来写博客，不依赖数据库，也便于长期维护。
+1. 使用 Markdown 编写文章
+2. 在 Front Matter 中写标题、日期、分类和标签
+3. 把图片放在 `assets/images` 或文章相关目录
+4. 持续维护归档和分类
+
+## 适用场景
+
+- 个人博客
+- 技术记录
+- 学习笔记
+- 工作总结
+- 生活随笔
