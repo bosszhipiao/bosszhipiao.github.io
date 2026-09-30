@@ -3,22 +3,100 @@ layout: default
 ---
 
 <section class="hero">
-  <div class="container">
-    <p class="eyebrow">个人博客</p>
-    <h1>记录生活，沉淀思考，分享知识</h1>
-    <p class="lead">
-      这是我的个人博客，分享技术笔记、生活感悟、学习记录和项目实践。
-    </p>
-    <div class="hero-actions">
-      <a class="button primary" href="#posts">阅读文章</a>
-      <a class="button secondary" href="/about/">关于我</a>
+  <div class="container hero-shell">
+    <div class="hero-copy">
+      <p class="eyebrow">PERSONAL BLOG</p>
+      <h1>把想法写成文章，让思考有温度。</h1>
+      <p class="lead">
+        我是 <strong>bosszhipiao</strong>，这里记录技术实践、阅读笔记、生活观察和成长经验。
+        关注前端、产品、设计与持续学习的点滴。
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#posts">阅读文章</a>
+        <a class="button secondary" href="{{ '/about/' | relative_url }}">关于我</a>
+      </div>
+
+      <div class="mini-stats">
+        <div>
+          <span class="num">12+</span>
+          <span class="label">文章</span>
+        </div>
+        <div>
+          <span class="num">6</span>
+          <span class="label">分类</span>
+        </div>
+        <div>
+          <span class="num">18</span>
+          <span class="label">标签</span>
+        </div>
+      </div>
     </div>
+
+    <aside class="profile-card">
+      <div class="avatar-ring">
+        <div class="avatar">B</div>
+      </div>
+      <h3>bosszhipiao</h3>
+      <p>工程师 / 设计感学习者 / 记录者</p>
+      <div class="profile-links">
+        <a href="https://github.com/bosszhipiao" target="_blank" rel="noopener">GitHub</a>
+        <a href="{{ '/categories/' | relative_url }}">分类</a>
+        <a href="{{ '/tags/' | relative_url }}">标签</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="feature-strip container">
+  <div class="feature-card">
+    <span class="feature-kicker">Focus</span>
+    <h3>技术输出</h3>
+    <p>记录工程实践、开发心得和学习笔记。</p>
+  </div>
+  <div class="feature-card">
+    <span class="feature-kicker">Thought</span>
+    <h3>思考沉淀</h3>
+    <p>把碎片化灵感串联成更稳定的认知结构。</p>
+  </div>
+  <div class="feature-card">
+    <span class="feature-kicker">Life</span>
+    <h3>生活记录</h3>
+    <p>见闻、观察和步履，构成真实而丰富的人生。</p>
+  </div>
+</section>
+
+<section class="categories container">
+  <div class="section-heading">
+    <p class="eyebrow">CATEGORIES</p>
+    <h2>关注内容</h2>
+  </div>
+
+  <div class="category-grid">
+    <a class="category-card" href="{{ '/categories/' | relative_url }}#技术">
+      <span class="tag-pill">技术</span>
+      <strong>开发与工程</strong>
+      <small>前端、架构、效率提升</small>
+    </a>
+    <a class="category-card" href="{{ '/categories/' | relative_url }}#学习">
+      <span class="tag-pill">学习</span>
+      <strong>持续成长</strong>
+      <small>阅读、复盘、实践总结</small>
+    </a>
+    <a class="category-card" href="{{ '/categories/' | relative_url }}#生活">
+      <span class="tag-pill">生活</span>
+      <strong>日常记录</strong>
+      <small>观察、感悟和经验</small>
+    </a>
   </div>
 </section>
 
 <section id="posts" class="posts container">
-  <div class="section-heading">
-    <h2>最新文章</h2>
+  <div class="section-heading split">
+    <div>
+      <p class="eyebrow">LATEST</p>
+      <h2>最新文章</h2>
+    </div>
+    <a class="link-more" href="{{ '/categories/' | relative_url }}">查看全部</a>
   </div>
 
   <div class="post-grid">
@@ -51,6 +129,19 @@ layout: default
           </div>
         </div>
       </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="tag-cloud-wrap container">
+  <div class="section-heading">
+    <p class="eyebrow">TOPICS</p>
+    <h2>热门标签</h2>
+  </div>
+
+  <div class="tag-cloud">
+    {% for tag in site.tags limit: 8 %}
+      <a href="{{ '/tags/' | relative_url }}#{{ tag[0] | slugify }}">#{{ tag[0] }}</a>
     {% endfor %}
   </div>
 </section>
