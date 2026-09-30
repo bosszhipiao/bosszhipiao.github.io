@@ -2705,10 +2705,9 @@ p {
   background: var(--glass-bg);
 }
 
-/* 引文「 装饰：暗底墨绿换月白偏淡 */
+/* 引文「 装饰：暗底大号字符会显白成折线条，直接隐藏 */
 [data-theme="dark"] .article-content blockquote::after {
-  color: var(--ink-green);
-  opacity: 0.4;
+  content: none;
 }
 
 /* 移动端导航横向滚动：暗底分隔更清晰 */
