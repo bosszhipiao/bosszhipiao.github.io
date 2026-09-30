@@ -1,0 +1,13 @@
+{% if page.comments != false and site.utterances.enabled %}
+<div class="comments container">
+  <h3>评论区</h3>
+  <script src="https://utteranc.es/client.js"
+    repo="{{ site.utterances.repo }}"
+    issue-term="{{ site.utterances.issue-term }}"
+    theme="{{ site.utterances.theme }}"
+    label="{{ site.utterances.label | default: 'comment' }}"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+{% endif %}
